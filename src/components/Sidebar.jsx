@@ -21,7 +21,7 @@ const Sidebar = ({ activeSection, onSectionChange }) => {
   ];
 
   const supportItems = [
-    { id: 'guide', label: 'Guide', icon: BookOpen },
+    // { id: 'guide', label: 'Guide', icon: BookOpen },
     { id: 'settings', label: 'Settings', icon: Settings },
   ];
 
