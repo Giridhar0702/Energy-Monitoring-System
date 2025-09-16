@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://username.github.io/myapp",
+  "homepage": "https://Giridhar0702.github.io/myapp",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
