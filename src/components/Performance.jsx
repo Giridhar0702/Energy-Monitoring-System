@@ -51,6 +51,33 @@ const Performance = () => {
     ],
   };
 
+  const detailedMetrics = [
+    {
+      site: 'Solar Farm Alpha',
+      type: 'Solar',
+      currentOutput: '2.1 MW',
+      efficiency: '96%',
+      capacityFactor: '84%',
+      status: 'Optimal'
+    },
+    {
+      site: 'Wind Farm Beta',
+      type: 'Wind',
+      currentOutput: '2.8 MW',
+      efficiency: '89%',
+      capacityFactor: '91%',
+      status: 'Optimal'
+    },
+    {
+      site: 'Hybrid Station Gamma',
+      type: 'Hybrid',
+      currentOutput: '1.5 MW',
+      efficiency: '72%',
+      capacityFactor: '68%',
+      status: 'Suboptimal'
+    }
+  ];
+
   const lineOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -168,6 +195,46 @@ const Performance = () => {
             <Bar data={efficiencyData} options={barOptions} />
           </div>
         </div>
+      </div>
+
+      {/* Detailed Performance Metrics */}
+      <div className="mt-8 bg-white rounded-xl border border-gray-200">
+        <div className="px-6 pt-6">
+          <h3 className="text-lg font-semibold text-gray-900">Detailed Performance Metrics</h3>
+        </div>
+        <div className="mt-4 overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Site</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Current Output</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Efficiency</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Capacity Factor</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-100">
+              {detailedMetrics.map((row) => (
+                <tr key={row.site} className="hover:bg-gray-50">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{row.site}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">{row.type}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{row.currentOutput}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{row.efficiency}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{row.capacityFactor}</td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    {row.status === 'Optimal' ? (
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Optimal</span>
+                    ) : (
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">Suboptimal</span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="h-4" />
       </div>
     </div>
   );
