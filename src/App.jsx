@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Dashboard from './components/Dashboard'
 import Locations from './components/Locations'
 import Performance from './components/Performance'
+import Consumption from './components/Consumption'
 import './App.css'
 
 function App() {
@@ -18,14 +19,7 @@ function App() {
       case 'performance':
         return <Performance />
       case 'consumption':
-        return (
-          <div className="p-6 bg-gray-50 min-h-screen">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Energy Consumption</h2>
-            <div className="bg-white rounded-xl border border-gray-200 p-8 text-center">
-              <p className="text-gray-600">Consumption analytics coming soon...</p>
-            </div>
-          </div>
-        )
+        return <Consumption />
       case 'system':
         return (
           <div className="p-6 bg-gray-50 min-h-screen">
