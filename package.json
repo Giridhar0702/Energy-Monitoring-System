@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://giridhar0702.github.io/Energy-Monitoring-System/myapp",
+  "homepage": "https://giridhar0702.github.io/Energy-Monitoring-System",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
